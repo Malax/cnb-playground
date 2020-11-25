@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+BUILDPLAN_PATH="${2}"
+
+if [[ -f "a_file_that_indicates_node_dep" ]]; then
+	cat > "${BUILDPLAN_PATH}" <<-EOF
+		[[requires]]
+		name = "node"
+	EOF
+fi
+
+if [[ -f "a_file_that_indicates_jdk_dep" ]]; then
+	cat > "${BUILDPLAN_PATH}" <<-EOF
+		[[requires]]
+		name = "jdk"
+	EOF
+fi
+
+[[ -f Gemfile ]]

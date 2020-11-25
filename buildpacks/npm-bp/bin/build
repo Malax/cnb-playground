@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [[ ! -f node-engine-bp.ran ]]; then
+  echo "Missing a node-engine-bp.ran!"
+  exit 1
+fi
+
+touch "npm-bp.ran"
+echo "npm-bp"
+
+exit 0

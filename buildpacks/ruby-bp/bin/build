@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+touch "ruby-bp.ran"
+echo "ruby-bp"
+
+exit 0

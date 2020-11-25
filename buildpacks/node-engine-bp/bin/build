@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+touch "node-engine-bp.ran"
+echo "node-engine-bp"
+
+exit 0

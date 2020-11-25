@@ -1,0 +1,18 @@
+api = "0.4"
+
+[buildpack]
+id = "node-bp"
+version = "0.1.0"
+name = "node-bp"
+
+[[order]]
+group = [
+  { id = "node-engine-bp", version = "0.1.0" },
+  { id = "npm-bp", version = "0.1.0" }
+]
+
+[[order]]
+group = [
+  { id = "node-engine-bp", version = "0.1.0" },
+  { id = "yarn-bp", version = "0.1.0" }
+]

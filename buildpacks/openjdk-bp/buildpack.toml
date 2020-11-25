@@ -1,0 +1,9 @@
+api = "0.4"
+
+[buildpack]
+id = "openjdk-bp"
+version = "0.1.0"
+name = "openjdk-bp"
+
+[[stacks]]
+id = "heroku-18"

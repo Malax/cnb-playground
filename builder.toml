@@ -1,0 +1,49 @@
+[stack]
+id = "heroku-18"
+build-image = "heroku/pack:18-build"
+run-image = "heroku/pack:18"
+
+[[buildpacks]]
+id = "node-bp"
+version = "0.1.0"
+uri = "buildpacks/node-bp"
+
+[[buildpacks]]
+id = "node-engine-bp"
+version = "0.1.0"
+uri = "buildpacks/node-engine-bp"
+
+[[buildpacks]]
+id = "npm-bp"
+version = "0.1.0"
+uri = "buildpacks/npm-bp"
+
+[[buildpacks]]
+id = "yarn-bp"
+version = "0.1.0"
+uri = "buildpacks/yarn-bp"
+
+[[buildpacks]]
+id = "openjdk-bp"
+version = "0.1.0"
+uri = "buildpacks/openjdk-bp"
+
+[[buildpacks]]
+id = "ruby-bp"
+version = "0.1.0"
+uri = "buildpacks/ruby-bp"
+
+# This is a meta buildpack that combines node-engine, yarn and npm. See buildpacks/node-bp/buildpack.toml
+[[order]]
+group = [
+  { id = "node-bp" }
+]
+
+# In this case, the Ruby buildpack is not a meta buildpack itself. We can add other buildpacks to this
+# group in the builder so they will provide the necessary dependencies if requested by ruby-bp via the build plan.
+[[order]]
+group = [
+  { id = "openjdk-bp", optional = true },
+  { id = "node-engine-bp", optional = true },
+  { id = "ruby-bp" }
+]

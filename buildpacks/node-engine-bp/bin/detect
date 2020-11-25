@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+BUILDPLAN_PATH="${2}"
+
+cat > "${BUILDPLAN_PATH}" <<-EOF
+  [[provides]]
+  name = "node"
+EOF
+
+exit 0

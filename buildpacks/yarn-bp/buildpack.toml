@@ -1,0 +1,9 @@
+api = "0.4"
+
+[buildpack]
+id = "yarn-bp"
+version = "0.1.0"
+name = "yarn-bp"
+
+[[stacks]]
+id = "heroku-18"

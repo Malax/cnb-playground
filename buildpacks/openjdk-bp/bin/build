@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+touch "openjdk-bp.ran"
+echo "openjdk-bp"
+
+exit 0

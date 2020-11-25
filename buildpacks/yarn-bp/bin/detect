@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+BUILDPLAN_PATH="${2}"
+
+cat > "${BUILDPLAN_PATH}" <<-EOF
+  [[requires]]
+  name = "node"
+EOF
+
+[[ -f yarn.lock ]]
